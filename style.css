@@ -149,3 +149,26 @@ html,body{
 .typing-field .input-data button:hover{
     background: #006fef;
 }
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* To create two columns for form. */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
