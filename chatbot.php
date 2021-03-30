@@ -10,25 +10,39 @@
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 <body>
-    <div class="wrapper">
-        <div class="title">Weather Bot</div>
-        <div class="form">
-            <div class="bot-inbox inbox">
-                <div class="icon">
-                    <i class="fas fa-user"></i>
-                </div>
-                <div class="msg-header">
-                    <p>Hello there, I'm a chatbot that is here to help you plan what to pack for your trip. First, I need to know what date you are leaving?</p>
-                </div>
-            </div>
-        </div>
-        <div class="typing-field">
-            <div class="input-data">
-                <input id="data" type="text" placeholder="Type something here.." required>
-                <button id="send-btn">Send</button>
-            </div>
-        </div>
-    </div>
+	<h2 class="question" id="question">date</h2>
+	<h2 class="country" id="country">Country</h2>
+	<input name="cities" id="cities" value=""/>
+	<div class = "container">
+		<div class="column">
+			<div class="wrapper">
+				<div class="title">Weather Bot</div>
+				<div class="form">
+					<div class="bot-inbox inbox">
+						<div class="icon">
+							<i class="fas fa-user"></i>
+						</div>
+						<div class="msg-header">
+							<p>Hello there, I'm a chatbot that is here to help you plan what to pack for your trip. First, I need to know what date you are leaving?</p>
+						</div>
+					</div>
+				</div>
+				<div class="typing-field">
+					<div class="input-data">
+						<input id="data" type="text" placeholder="Type something here.." required>
+						<button id="send-btn">Send</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="column">
+			<div class="wrapper">
+				<div class="results">
+					<h2>Test</h2>
+				</div>
+			</div>
+		</div>
+	</div>
   <script>
         $(document).ready(function(){
             $("#send-btn").on("click", function(){
