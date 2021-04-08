@@ -1,0 +1,1 @@
+C:37:"PHPUnit\Runner\DefaultTestResultCache":304:{a:2:{s:7:"defects";a:3:{s:32:"processDateTest::testProcessDate";i:3;s:29:"processDateTest::testFailure2";i:3;s:29:"processDateTest::testFailure3";i:3;}s:5:"times";a:3:{s:32:"processDateTest::testProcessDate";d:0.006;s:29:"processDateTest::testFailure2";d:0;s:29:"processDateTest::testFailure3";d:0.001;}}}

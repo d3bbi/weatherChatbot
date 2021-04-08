@@ -7,7 +7,7 @@ require "processDate.php";
 	$getCities = array(json_encode($_POST['cities']));
 	$getMesg = $_POST['text'];
 	if($getAnswerExpected == 'date') {
-	    processDate($getMesg);
+	    $processDate($getMesg);
 	} else if ($getAnswerExpected == 'country'){
 
 		$curl = curl_init();

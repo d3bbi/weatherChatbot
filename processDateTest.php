@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 require './vendor/autoload.php';
-require "processDate.php";
+
 
 
 class processDateTest extends PHPUnit\Framework\TestCase {
@@ -9,21 +9,19 @@ class processDateTest extends PHPUnit\Framework\TestCase {
  */
 
 
-    public function testFailure(): void
+    public function testProcessDate(): void
     {
-        $this->assertEquals(1, 0);
+		require_once "processDate.php";
+		
+		$expected = "Great, now which country are you planning to visit?";
+		
+        $this->assertEquals($expected,$processDate("20-06-2021"));
     }
 
     public function testFailure2(): void
     {
-        $this->assertEquals('bar', 'baz');
-    }
-
-    public function testFailure3(): void
-    {
-        $this->assertEquals("foo\nbar\nbaz\n", "foo\nbah\nbaz\n");
+        $this->assertEquals('bar', 'bar');
     }
 }
 
 ?>
-
