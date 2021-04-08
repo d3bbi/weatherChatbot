@@ -9,5 +9,5 @@ $processDate = function($getMesg) {
 		return $array;
 	}
 }
-	
+
 ?>
