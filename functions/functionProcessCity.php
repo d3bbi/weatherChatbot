@@ -22,8 +22,8 @@ $found = false;
         //$output contains the output string
         $output = curl_exec($ch);
 		$js_code = json_decode($output);
-		//echo $js_code->weather[0]->description . '<br>' . $js_code->main->temp;
-		$array = array("weather","Found",$getMesg,$getCities);
+		//$js_code->weather[0]->description . '<br>' . $js_code->main->temp;
+		$array = array("weather","The weather in ".$getMesg." is ".$js_code->weather[0]->description . " with a temperature of: " . $js_code->main->temp,$getMesg,$getCities);
 		return $array;
         // close curl resource to free up system resources
         curl_close($ch);

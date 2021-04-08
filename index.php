@@ -53,7 +53,6 @@
                 $(".form").append($msg);
                 $("#data").val('');
 				var jsonString = $cities;
-				console.log(jsonString);
 				
                 // start ajax code
                 $.ajax({
@@ -73,7 +72,6 @@
                         $(".form").scrollTop($(".form")[0].scrollHeight);
 						$("#question").html(jsArray[0]);
 						$("#cities").val(jsArray[3]);
-						console.log(jsArray[3]);
                     }
                 });
             });
