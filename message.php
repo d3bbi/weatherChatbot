@@ -7,11 +7,11 @@
 	$getCities = array(json_encode($_POST['cities']));
 	$getMesg = $_POST['text'];
 	if($getAnswerExpected == 'date') {
-		require "functionProcessDate.php";
+		require "functions/functionProcessDate.php";
 		$date = $processDate($getMesg);
 	    echo json_encode($date);
 	} else if ($getAnswerExpected == 'country'){
-		require "functionProcessCountry.php";
+		require "function/ProcessCountry.php";
 		$country = $processCountry($getMesg);
 		echo json_encode($country);
 	} else if ($getAnswerExpected == 'city'){
