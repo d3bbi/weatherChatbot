@@ -3,7 +3,7 @@
 $processCountry = function($getMesg) {
 	$curl = curl_init();
 			curl_setopt_array($curl, [
-				CURLOPT_URL => "https://andruxnet-world-cities-v1.p.rapidapi.com/?query=ireland&searchby=country",
+				CURLOPT_URL => "https://andruxnet-world-cities-v1.p.rapidapi.com/?query=".$getMesg."&searchby=country",
 				CURLOPT_RETURNTRANSFER => true,
 				CURLOPT_FOLLOWLOCATION => true,
 				CURLOPT_ENCODING => "",
