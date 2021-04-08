@@ -17,8 +17,6 @@
 		require "functions/functionProcessCity.php";
 		$city = $processCity($getMesg,$getCities);
 		echo json_encode($city);		
-
-		
 	}
 	
 	

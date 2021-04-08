@@ -23,7 +23,7 @@ $found = false;
         $output = curl_exec($ch);
 		$js_code = json_decode($output);
 		//$js_code->weather[0]->description . '<br>' . $js_code->main->temp;
-		$array = array("weather","The weather in ".$getMesg." is ".$js_code->weather[0]->description . " with a temperature of: " . $js_code->main->temp,$getMesg,$getCities);
+		$array = array("weather","The weather in ".$getMesg." is ".$js_code->weather[0]->description . " with a temperature of: " . $js_code->main->temp,$getMesg,$getCities,$js_code->weather[0]->description,$js_code->main->temp);
 		return $array;
         // close curl resource to free up system resources
         curl_close($ch);

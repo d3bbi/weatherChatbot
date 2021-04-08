@@ -38,7 +38,7 @@
 		<div class="column">
 			<div class="wrapper">
 				<div class="results">
-					<h2>Test</h2>
+					<h2>What to pack</h2>
 				</div>
 			</div>
 		</div>
@@ -65,9 +65,16 @@
 						var jsArray = JSON.parse(result);
 						console.log(jsArray);
 						$replay = '<div class="bot-inbox inbox"><div class="icon"><i class="fas fa-user"></i></div><div class="msg-header">'+ jsArray[1] +'</div></div>';
+						if (jsArray[0]=="weather") {
+							$weather = '<div class="containerWeather"><div class = "successMsg">' + jsArray[2] +': '+jsArray[4]+'</div></div>';
+							$(".results").append($weather);
+							
+							  	
+
+						}
                         //$replay = '<div class="bot-inbox inbox"><div class="icon"><i class="fas fa-user"></i></div><div class="msg-header"><p>'+ result +'</p></div></div>';
                         $(".form").append($replay);
-						$(".results").append($replay);
+						
                         // when chat goes down the scroll bar automatically comes to the bottom
                         $(".form").scrollTop($(".form")[0].scrollHeight);
 						$("#question").html(jsArray[0]);
