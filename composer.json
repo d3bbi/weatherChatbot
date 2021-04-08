@@ -1,0 +1,15 @@
+{
+    "name": "college/weatherbot",
+    "description": "weatherbot",
+    "type": "project",
+    "require": {
+        "phpunit/phpunit": ">=1.0"
+    },
+    "minimum-stability": "dev",
+	   "autoload": {
+       "classmap": [
+           "src/"
+       ]
+   }
+}
+
