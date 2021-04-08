@@ -52,13 +52,14 @@
                 $msg = '<div class="user-inbox inbox"><div class="msg-header"><p>'+ $value +'</p></div></div>';
                 $(".form").append($msg);
                 $("#data").val('');
-				
+				var jsonString = $cities;
+				console.log(jsonString);
 				
                 // start ajax code
                 $.ajax({
                     url: 'message.php',
                     type: 'POST',
-					data: {question: $question, text: $value, cities: $cities},
+					data: {question: $question, text: $value, cities: jsonString},
                     //data: 'text='+$value,
                     success: function(result){
 						
@@ -72,7 +73,7 @@
                         $(".form").scrollTop($(".form")[0].scrollHeight);
 						$("#question").html(jsArray[0]);
 						$("#cities").val(jsArray[3]);
-						console.log($cities);
+						console.log(jsArray[3]);
                     }
                 });
             });

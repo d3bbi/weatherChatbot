@@ -1,22 +1,22 @@
 <?php
 
-
-
 	// getting user message through ajax
 	$getAnswerExpected = $_POST['question'];
-	$getCities = array(json_encode($_POST['cities']));
+	$getCities = $_POST['cities'];
 	$getMesg = $_POST['text'];
 	if($getAnswerExpected == 'date') {
 		require "functions/functionProcessDate.php";
 		$date = $processDate($getMesg);
 	    echo json_encode($date);
 	} else if ($getAnswerExpected == 'country'){
-		require "function/ProcessCountry.php";
+		require "functions/functionProcessCountry.php";
 		$country = $processCountry($getMesg);
 		echo json_encode($country);
+		
 	} else if ($getAnswerExpected == 'city'){
 		$found = false;
-		foreach($getCities as $value) {
+		$cities = explode(",",$getCities);
+		foreach($cities as $value) {
 				if ($value == $getMesg) {
 					$found = true;
 				}
