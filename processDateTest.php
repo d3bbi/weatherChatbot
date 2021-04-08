@@ -8,14 +8,22 @@ class processDateTest extends PHPUnit\Framework\TestCase {
  * processDate() test case.
  */
 
-
-    public function testProcessDate(): void
+	//Testing process date function returns correct result when date passed.
+    public function testProcessDatePositiveReturn(): void
     {
-		require_once "processDate.php";
+		require "processDate.php";
 		
-		$expected = "Great, now which country are you planning to visit?";
+		$expected = array("country","Great, now which country are you planning to visit?","20-06-2021");
 		
         $this->assertEquals($expected,$processDate("20-06-2021"));
+    }
+	//Testing process date function returns correct result when non date passed.
+    public function testProcessDateNegativeReturn(): void
+    {
+		require "processDate.php";
+		$expected = array("date","I'm sorry I didn't get that date. Can you try again?","banana");
+		
+        $this->assertEquals($expected,$processDate("banana"));
     }
 
     public function testFailure2(): void
