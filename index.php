@@ -73,7 +73,7 @@
 						//logging the array to console.
 						console.log(jsArray);
 						//Creating the html require to show the bots reply on the form.
-						$replay = '<div class="bot-inbox inbox"><div class="icon"><i class="fas fa-user"></i></div><div class="msg-header">'+ jsArray[1] +'</div></div>';
+						$replay = '<div class="bot-inbox inbox"><div class="icon"><i class="fas fa-user"></i></div><div class="msg-header"><p>'+ jsArray[1] +'</p></div></div>';
 						//if the first element of the array is weather then create html to process into what to pack section.
 						if (jsArray[0]=="weather") {
 							$weather = '<div class="containerWeather"><div class = "successMsg">' + jsArray[2] +': '+jsArray[4]+'</div></div>';
