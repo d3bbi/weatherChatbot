@@ -29,7 +29,7 @@ $processCountry = function($getMesg) {
 			curl_close($curl);
 			//if there was an error then ask for the country again.
 			if ($err) {
-				$array = array("country","I did not get that, can you enter the country again please?".$response,$getMesg,$getCities);
+				$array = array("country","I did not get that, can you enter the country again please?".$response,$getMesg);
 				return $array;
 			//if no errors, then loop through the returned array of cities and pass them return them with next question prompt.
 			} else {

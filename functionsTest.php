@@ -12,9 +12,7 @@ class functionsTest extends PHPUnit\Framework\TestCase {
     public function testProcessDatePositiveReturn(): void
     {
 		require "functions/functionProcessDate.php";
-		
 		$expected = array("country","Great, now which country are you planning to visit?","20-06-2021");
-		
         $this->assertEquals($expected,$processDate("20-06-2021"));
     }
 	//Testing process date function returns correct result when non date passed.

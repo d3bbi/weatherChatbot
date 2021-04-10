@@ -48,16 +48,24 @@
             $("#send-btn").on("click", function(){
 				//pulls the question type value currently stored in the html.
 				$question = $("#question").html();
+				console.log("Question is: "+$question);
+
 				//stores the value entered into the user speech field as a variable.
                 $value = $("#data").val();
+				console.log("value is: "+$value);
+
 				//Stores the list of cities returned as a string
 				$cities = $('#cities').val();
+				console.log("cities is: "+$cities);
+
 				//Creates the html required to add the user message to the interface.
                 $msg = '<div class="user-inbox inbox"><div class="msg-header"><p>'+ $value +'</p></div></div>';
+
 				//Adds the message to the form.
                 $(".form").append($msg);
 				//Clears the user entry field.
-                $("#data").val('');				
+                $("#data").val('');
+
                 //Ajax posts to the message.php file and receives the return on success.
                 $.ajax({
 					//file where post is being directed.
@@ -73,13 +81,12 @@
 						//logging the array to console.
 						console.log(jsArray);
 						//Creating the html require to show the bots reply on the form.
-						$replay = '<div class="bot-inbox inbox"><div class="icon"><i class="fas fa-user"></i></div><div class="msg-header">'+ jsArray[1] +'</div></div>';
+						$replay = '<div class="bot-inbox inbox"><div class="icon"><i class="fas fa-user"></i></div><div class="msg-header"><p>'+ jsArray[1] +'</p></div></div>';
+
 						//if the first element of the array is weather then create html to process into what to pack section.
 						if (jsArray[0]=="weather") {
 							$weather = '<div class="containerWeather"><div class = "successMsg">' + jsArray[2] +': '+jsArray[4]+'</div></div>';
 							$(".results").append($weather);
-							
-							  
 						}
                         //$replay = '<div class="bot-inbox inbox"><div class="icon"><i class="fas fa-user"></i></div><div class="msg-header"><p>'+ result +'</p></div></div>';
 						//Add the bots reply the form.
