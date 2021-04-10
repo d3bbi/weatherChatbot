@@ -14,6 +14,7 @@
 		$date = $processDate($getMesg);
 		//Date array is passed back to index.php for processing.
 	    echo json_encode($date);
+
 	//If the expected answer is country then
 	} else if ($getAnswerExpected == 'country'){
 		//pull the process country file and run the function.
@@ -22,6 +23,7 @@
 		$country = $processCountry($getMesg);
 		//Country array is passed back to index.php for processing.
 		echo json_encode($country);
+		
 	//If the expected answer is city then	
 	} else if ($getAnswerExpected == 'city'){
 		//pull the process city file and run the function.

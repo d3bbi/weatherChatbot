@@ -3,8 +3,21 @@
 //function to check if value is a date.
 $processDate = function ($getMsg) {
 
+	$valid = false;
+	//check if the date is separated by "-"
+	$minusDate = DateTime::createFromFormat('d-m-Y', $getMsg);
+	//check if date is separated by "/"
+	$slashDate = DateTime::createFromFormat('d/m/Y', $getMsg);
+	if ($minusDate && $minusDate->format('d-m-Y') == $getMsg) {
+		$valid = true;
+	} else if ($slashDate && $slashDate->format('d/m/Y') == $getMsg) {
+		$valid = true;
+	} else {
+		$valid = false;
+	}
+
 	//check if the date entered is valid
-	if (validateDateMinus($getMsg)) {
+	if ($valid) {
 		$inputDate = new DateTime($getMsg);
 		$currentDate = new DateTime();
 		//check if the date selected is in the future
@@ -21,21 +34,6 @@ $processDate = function ($getMsg) {
 		//if not a date the keep question as date and ask again.
 		$array = array("date", "I'm sorry I didn't get that date. Can you try again?", $getMsg);
 		return $array;
-	}
-};
-
-function validateDateMinus($date)
-{
-	//check if the date is separated by "-"
-	$minusDate = DateTime::createFromFormat('d-m-Y', $date);
-	//check if date is separated by "/"
-	$slashDate = DateTime::createFromFormat('d/m/Y', $date);
-	if ($minusDate && $minusDate->format('d-m-Y') == $date) {
-		return true;
-	} else if ($slashDate && $slashDate->format('d/m/Y') == $date) {
-		return true;
-	} else {
-		return false;
 	}
 };
 
