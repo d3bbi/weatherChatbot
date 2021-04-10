@@ -3,18 +3,18 @@
 //function to check if value is a date.
 $processDate = function ($getMsg) {
 
-
-	//using php strtotime function to check if value is a date.
+	//check if the date entered is valid
 	if (validateDateMinus($getMsg)) {
 		$inputDate = new DateTime($getMsg);
 		$currentDate = new DateTime();
+		//check if the date selected is in the future
 		if ($inputDate > $currentDate) {
-			//if the value is a date, update the question to country, show the return message and return original message as array.
+			//if the value is a valid date, update the question to country, show the return message and return original message as array.
 			$array = array("country", "Great, now which country are you planning to visit?", $getMsg);
 			return $array;
 		} else {
 			//if not a date the keep question as date and ask again.
-			$array = array("date", "It would be great to travel back in time, but needs to be a future date.", $getMsg);
+			$array = array("date", "It would be great to travel back in time! Please enter a future date.", $getMsg);
 			return $array;
 		}
 	} else {
@@ -26,19 +26,16 @@ $processDate = function ($getMsg) {
 
 function validateDateMinus($date)
 {
-	$d = DateTime::createFromFormat('d-m-Y', $date);
-	$a = DateTime::createFromFormat('d/m/Y', $date);
-	if ($d && $d->format('d-m-Y') == $date) {
+	//check if the date is separated by "-"
+	$minusDate = DateTime::createFromFormat('d-m-Y', $date);
+	//check if date is separated by "/"
+	$slashDate = DateTime::createFromFormat('d/m/Y', $date);
+	if ($minusDate && $minusDate->format('d-m-Y') == $date) {
 		return true;
-	} else if ($a && $a->format('d/m/Y') == $date) {
+	} else if ($slashDate && $slashDate->format('d/m/Y') == $date) {
 		return true;
 	} else {
 		return false;
 	}
 };
 
-// function validateDateSlash($date, $format = 'd/m/Y')
-// {
-// 	$d = DateTime::createFromFormat($format, $date);
-// 	return $d && $d->format($format) == $date;
-// };
