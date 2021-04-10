@@ -31,10 +31,11 @@ $processCountry = function($getMesg) {
 			if ($err) {
 				$array = array("country","I did not get that, can you enter the country again please?".NULL,$getMesg);
 				return $array;
-			//if no errors, then loop through the returned array of cities and pass them return them with next question prompt.
+			//if the array is empty, ask for the country again
 			} else if ($response === "[]"){
 				$array = array("country","I did not get that, can you enter the country again please?".NULL,$getMesg);
 				return $array;
+			//if no errors, then loop through the returned array of cities and pass them return them with next question prompt.
 			} else {
 				$cityArr = array();
 				$arr = json_decode($response);
