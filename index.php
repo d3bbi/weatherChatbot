@@ -48,15 +48,12 @@
             $("#send-btn").on("click", function(){
 				//pulls the question type value currently stored in the html.
 				$question = $("#question").html();
-				console.log("Question is: "+$question);
 
 				//stores the value entered into the user speech field as a variable.
                 $value = $("#data").val();
-				console.log("value is: "+$value);
 
 				//Stores the list of cities returned as a string
 				$cities = $('#cities').val();
-				console.log("cities is: "+$cities);
 
 				//Creates the html required to add the user message to the interface.
                 $msg = '<div class="user-inbox inbox"><div class="msg-header"><p>'+ $value +'</p></div></div>';
