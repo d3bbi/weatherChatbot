@@ -46,17 +46,11 @@
 			</div>
 		</div>
 	</div>
-<<<<<<< HEAD
-	<script>
-		$(document).ready(function() {
-			$("#send-btn").on("click", function() {
-=======
   <script>
 
         $(document).ready(function(){
             $("#send-btn").on("click", function(){
 			
->>>>>>> 86c97bcd929d190665fc23436d04669bab494ff6
 				//pulls the question type value currently stored in the html.
 				$question = $("#question").html();
 

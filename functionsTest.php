@@ -67,6 +67,18 @@ class functionsTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, $processDate('2021-25-12'));
     }
 
+        //Testing when the date is separated by wrong symbols (d.m.Y)
+        public function testProcessWrongSymbols(): void
+        {
+            require 'functions/functionProcessDate.php';
+            $expected = [
+                'date',
+                "I'm sorry I didn't get that date. Can you try again?",
+                '2021-25-12',
+            ];
+            $this->assertEquals($expected, $processDate('12.05.2021'));
+        }
+
     /**
      * processCountry() test case.
      */
