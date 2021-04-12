@@ -44,8 +44,10 @@
 		</div>
 	</div>
   <script>
+
         $(document).ready(function(){
             $("#send-btn").on("click", function(){
+			
 				//pulls the question type value currently stored in the html.
 				$question = $("#question").html();
 
