@@ -67,7 +67,7 @@ class functionsTest extends PHPUnit\Framework\TestCase
         //Testing processCountry returns the correct string after processing a city
         public function testProcessCountryNegativeReturn(): void
         {
-+           require "functions/functionProcessCountry.php";
+           require "functions/functionProcessCountry.php";
             $expected = array("country", "I did not get that, can you enter the country again please?", "Dublin");
             $this->assertEquals($expected, $processCountry("Dublin"));
         }
