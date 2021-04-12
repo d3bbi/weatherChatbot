@@ -5,6 +5,8 @@
 	$getCities = $_POST['cities'];
 	$getMesg = $_POST['text'];
 	
+	
+	
 	//Processing logic.
 	//If the expected answer is a date then
 	if($getAnswerExpected == 'date') {
