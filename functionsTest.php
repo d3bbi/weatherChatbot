@@ -112,6 +112,14 @@ class functionsTest extends PHPUnit\Framework\TestCase
             $expected = array("city", "Couldn't Find", "Ireland","89");
             $this->assertEquals($expected, $processCity("Ireland", "89"));
         }
+        //Testing with symbols instead of city
+    public function testProcessCityWithSymbols(): void
+        {
+           require "functions/functionProcessCity.php";
+            $expected = array("city", "Couldn't Find", "Ireland","///***");
+            $this->assertEquals($expected, $processCity("Ireland", "///***"));
+        }
+
     public function testFailure2(): void
     {
         $this->assertEquals('bar', 'bar');
