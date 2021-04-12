@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Somehow I got an error, so I comment the title, just uncomment to show -->
-    <!-- <title>Simple Chatbot in PHP | CodingNepal</title> -->
+    <title>Simple Chatbot in PHP</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
