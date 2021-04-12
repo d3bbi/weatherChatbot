@@ -44,9 +44,9 @@ class functionsTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, $processDate("2021-25-12"));
     }
 
-/**
- * processCountry() test case.
-*/
+    /**
+     * processCountry() test case.
+     */
 
     //Testing processCountry returns the correct string of cities within Ireland
     public function testProcessCountryPostiveReturn(): void
@@ -58,18 +58,16 @@ class functionsTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, $processCountry("Ireland"));
     }
 
-        //Testing processCountry returns the correct string after processing a city
-        public function testProcessCountryNegativeReturn(): void
-        {
-            require "functions/functionProcessCountry.php";
-            $expected = array("country", "I did not get that, can you enter the country again please?", "Dublin");
-            $this->assertEquals($expected, $processCountry("Dublin"));
-        }
+    //Testing processCountry returns the correct string after processing a city
+    public function testProcessCountryNegativeReturn(): void
+    {
+        require "functions/functionProcessCountry.php";
+        $expected = array("country", "I did not get that, can you enter the country again please?", "Dublin");
+        $this->assertEquals($expected, $processCountry("Dublin"));
+    }
 
     public function testFailure2(): void
     {
         $this->assertEquals('bar', 'bar');
     }
 }
-
-?>
