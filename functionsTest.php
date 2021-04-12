@@ -27,7 +27,7 @@ class functionsTest extends PHPUnit\Framework\TestCase
         $expected = '20/06/2021';
         $this->assertEquals(
             $expected,
-            $processString('date', 'I am leaving on the 20-06-2021', null)
+            $processString('date', 'I am leaving on the 20-06-2021', 'null')
         );
     }
 
@@ -42,6 +42,18 @@ class functionsTest extends PHPUnit\Framework\TestCase
         ];
         $this->assertEquals($expected, $processDate('banana'));
     }
+
+        //Test if only a character is entered
+        public function testProcessDateCharacter(): void
+        {
+            require 'functions/functionProcessDate.php';
+            $expected = [
+                'date',
+                "I'm sorry I didn't get that date. Can you try again?",
+                'a',
+            ];
+            $this->assertEquals($expected, $processDate('a'));
+        }
 
     //Testing in case the date is in the past
     public function testProcessPastDate(): void
@@ -67,17 +79,17 @@ class functionsTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, $processDate('2021-25-12'));
     }
 
-        //Testing when the date is separated by wrong symbols (d.m.Y)
-        public function testProcessWrongSymbols(): void
-        {
-            require 'functions/functionProcessDate.php';
-            $expected = [
-                'date',
-                "I'm sorry I didn't get that date. Can you try again?",
-                '2021-25-12',
-            ];
-            $this->assertEquals($expected, $processDate('12.05.2021'));
-        }
+    //Testing when the date is separated by wrong symbols (d.m.Y)
+    public function testProcessWrongSymbols(): void
+    {
+        require 'functions/functionProcessDate.php';
+        $expected = [
+            'date',
+            "I'm sorry I didn't get that date. Can you try again?",
+            '12.05.2021',
+        ];
+        $this->assertEquals($expected, $processDate('12.05.2021'));
+    }
 
     /**
      * processCountry() test case.
@@ -119,18 +131,18 @@ class functionsTest extends PHPUnit\Framework\TestCase
     }
     // Tests with number instead of city
     public function testProcessCityWithNumber(): void
-        {
-           require "functions/functionProcessCity.php";
-            $expected = array("city", "Couldn't Find", "Ireland","89");
-            $this->assertEquals($expected, $processCity("Ireland", "89"));
-        }
-        //Testing with symbols instead of city
+    {
+        require "functions/functionProcessCity.php";
+        $expected = array("city", "Couldn't Find", "Ireland", "89");
+        $this->assertEquals($expected, $processCity("Ireland", "89"));
+    }
+    //Testing with symbols instead of city
     public function testProcessCityWithSymbols(): void
-        {
-           require "functions/functionProcessCity.php";
-            $expected = array("city", "Couldn't Find", "Ireland","///***");
-            $this->assertEquals($expected, $processCity("Ireland", "///***"));
-        }
+    {
+        require "functions/functionProcessCity.php";
+        $expected = array("city", "Couldn't Find", "Ireland", "///***");
+        $this->assertEquals($expected, $processCity("Ireland", "///***"));
+    }
 
     public function testFailure2(): void
     {
