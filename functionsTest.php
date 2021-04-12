@@ -122,6 +122,12 @@ class functionsTest extends PHPUnit\Framework\TestCase
         ];
         $this->assertEquals($expected, $processCountry('Dublin'));
     }
+
+    
+    /**
+     * processCities() test case.
+     */
+
     //Testing input with invalid text parameter of country instead of city
     public function testProcessCityNegativeReturn(): void
     {
