@@ -91,8 +91,25 @@
 
 						//if the first element of the array is weather then create html to process into what to pack section.
 						if (jsArray[0] == "weather") {
-							$weather = '<div class="containerWeather"><div class = "successMsg">' + jsArray[2] + ': ' + jsArray[4] + '</div></div>';
-							$(".results").append($weather);
+							$.ajax({
+								url: 'functions/functionWeatherMatrix.php',
+								//Type of call.
+								type: 'POST',
+								//Creating the data to be sent to message.php
+								data: {
+									weather: jsArray[4],
+									temp: jsArray[5],
+									city: jsArray[2]
+								},
+								success: function(result) {
+									console.log("success");
+									$weather = result;
+									$(".results").append($weather);
+								}
+								
+							});
+							
+							
 						}
 						//$replay = '<div class="bot-inbox inbox"><div class="icon"><i class="fas fa-user"></i></div><div class="msg-header"><p>'+ result +'</p></div></div>';
 						//Add the bots reply the form.
