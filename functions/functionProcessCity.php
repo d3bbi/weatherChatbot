@@ -4,10 +4,10 @@ $processCity = function($getMesg,$getCities) {
 $found = false;
 		$cities = explode(",",$getCities);
 		foreach($cities as $value) {
-				if ($value == $getMesg) {
-					$found = true;
-				}
+			if (strcasecmp($getMesg, $value)) {
+				$found = true;
 			}
+		}
 			
 		if ($found == true) {
 			        // create curl resource
