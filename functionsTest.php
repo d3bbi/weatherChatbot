@@ -123,7 +123,7 @@ class functionsTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, $processCountry('Dublin'));
     }
 
-    
+        
     /**
      * processCities() test case.
      */
