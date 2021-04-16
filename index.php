@@ -31,7 +31,7 @@
 				<form>
 					<div class="typing-field">
 						<div class="input-data">
-							<input id="data" type="text" placeholder="Type something here.." required>
+							<input id="data" type="text" placeholder="Type something here.." required oninvalid="this.setCustomValidity(' ')">
 							<button id="send-btn">Send</button>
 						</div>
 					</div>
