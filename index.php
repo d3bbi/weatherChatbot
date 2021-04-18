@@ -8,16 +8,24 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="script.js"></script>
 </head>
 
 <body>
-	<h2 class="question" id="question">date</h2>
-	<h2 class="country" id="country">Country</h2>
-	<input name="cities" id="cities" value="" />
+	<header class="header">
+		<div class="title">Weather Bot</div>
+		<p>By The PHP Three</p>
+
+	</header>
+	<div class="testValueContainer">
+		<h2 class="question" id="question">date</h2>
+		<h2 class="country" id="country">Country</h2>
+		<input name="cities" id="cities" value="" />
+	</div>
 	<div class="container">
 		<div class="column">
 			<div class="wrapper">
-				<div class="title">Weather Bot</div>
+				
 				<div class="form">
 					<div class="bot-inbox inbox">
 						<div class="icon">
@@ -31,11 +39,22 @@
 				<form>
 					<div class="typing-field">
 						<div class="input-data">
-							<input id="data" type="text" placeholder="Type something here.." required oninvalid="this.setCustomValidity(' ')">
+							<div class="input-single">
+								<input id="data" type="text" placeholder="Type something here.." required>
+							</div> 
+							
 							<button id="send-btn">Send</button>
 						</div>
 					</div>
 				</form>
+				<h3 class="no-browser-support">Sorry, Your Browser Doesn't Support the Web Speech API. Try Opening This Demo In Google Chrome.</h3>
+				<div class="app">     
+					<button id="start-record-btn" title="Start Recording">Use Voice</button>
+					<button id="pause-record-btn" title="Pause Recording">Stop Recording</button> 
+					<p id="recording-instructions">Press the <strong>Start Recognition</strong> button and allow access.</p>
+					<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+					<script src="script.js"></script>
+				</div>
 			</div>
 		</div>
 		<div class="column">
@@ -46,6 +65,10 @@
 			</div>
 		</div>
 	</div>
+	<footer class="footer">
+		<p>By Deborah, David & Cian.</p>
+
+	</footer>
   <script>
 
         $(document).ready(function(){
@@ -86,13 +109,31 @@
 						var jsArray = JSON.parse(result);
 						//logging the array to console.
 						console.log(jsArray);
+							readOutLoud(jsArray[1]);
 						//Creating the html require to show the bots reply on the form.
 						$replay = '<div class="bot-inbox inbox"><div class="icon"><i class="fas fa-user"></i></div><div class="msg-header"><p>' + jsArray[1] + '</p></div></div>';
 
 						//if the first element of the array is weather then create html to process into what to pack section.
 						if (jsArray[0] == "weather") {
-							$weather = '<div class="containerWeather"><div class = "successMsg">' + jsArray[2] + ': ' + jsArray[4] + '</div></div>';
-							$(".results").append($weather);
+							$.ajax({
+								url: 'functions/functionWeatherMatrix.php',
+								//Type of call.
+								type: 'POST',
+								//Creating the data to be sent to message.php
+								data: {
+									weather: jsArray[4],
+									temp: jsArray[5],
+									city: jsArray[2]
+								},
+								success: function(result) {
+									console.log("success");
+									$weather = result;
+									$(".results").append($weather);
+								}
+								
+							});
+							
+							
 						}
 						//$replay = '<div class="bot-inbox inbox"><div class="icon"><i class="fas fa-user"></i></div><div class="msg-header"><p>'+ result +'</p></div></div>';
 						//Add the bots reply the form.
