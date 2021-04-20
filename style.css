@@ -207,7 +207,6 @@ html,body{
 	width: 80%;
 	margin: 0 auto;
 	text-align: center;
-
 }
 
 /* To create two columns for form. */
@@ -233,15 +232,14 @@ p {
     color: #444;
 }
 
-button:focus {
+/* button:focus {
     outline: 0;
-}
+} */
 
 .page-description {
     font-size: 1.1rem;
     margin: 0 auto;
 }
-
 
 
 .no-browser-support {
@@ -287,7 +285,6 @@ button:focus {
     .container {
         padding: 50px 25px;
     }
-
     button {
         margin-bottom: 10px;
     }
