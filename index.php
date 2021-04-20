@@ -40,7 +40,7 @@
 					<div class="typing-field">
 						<div class="input-data">
 							<div class="input-single">
-								<input id="data" type="text" placeholder="Type something here.." required>
+								<input id="data" type="text" placeholder="Type something here.." required oninvalid="this.setCustomValidity(' ')">
 							</div> 
 							
 							<button id="send-btn">Send</button>

@@ -11,11 +11,13 @@ html,body{
 }
 
 .header {
-  padding: 20px;
-  text-align: center;
-  background: blue;
-  color: white;
-  font-size: 30px;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    background-image: url(./images/headerPic.png);
+    background-size: cover;
+    font-size: 30px;
+    background-position-y: bottom;
 }
 
 .footer {
