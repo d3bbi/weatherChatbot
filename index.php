@@ -109,7 +109,7 @@
 						var jsArray = JSON.parse(result);
 						//logging the array to console.
 						console.log(jsArray);
-							readOutLoud(jsArray[1]);
+							//readOutLoud(jsArray[1]);
 						//Creating the html require to show the bots reply on the form.
 						$replay = '<div class="bot-inbox inbox"><div class="icon"><i class="fas fa-user"></i></div><div class="msg-header"><p>' + jsArray[1] + '</p></div></div>';
 
