@@ -26,7 +26,15 @@ $found = false;
 		
 		//calculate temperature - Celsius = Kelvin-273.15
 		$temp = "<br>".round($js_code->main->temp-273.15,1)." C";
-		$array = array("weather","The weather in ".$getMesg." is ".$js_code->weather[0]->description . " with a temperature of: " . $temp,$getMesg,$getCities,$js_code->weather[0]->description,$js_code->main->temp);
+		$array = array(
+		"weather",
+		"The weather in ".$getMesg." is ".$js_code->weather[0]->description . " with a temperature of: " . $temp
+		,ucwords($getMesg)
+		,$getCities
+		,$js_code->weather[0]->description,
+		$js_code->weather[0]->icon,
+		$js_code->main->temp);
+
 		return $array;
         // close curl resource to free up system resources
         curl_close($ch);

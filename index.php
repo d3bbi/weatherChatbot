@@ -119,7 +119,8 @@
 								//Creating the data to be sent to message.php
 								data: {
 									weather: jsArray[4],
-									temp: jsArray[5],
+									icon: jsArray[5],
+									temp: jsArray[6],
 									city: jsArray[2]
 								},
 								success: function(result) {
