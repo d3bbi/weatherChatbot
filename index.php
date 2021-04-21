@@ -57,7 +57,7 @@
 		<div class="column">
 			<div class="wrapper">
 				<div class="results">
-					<h2>What to pack</h2>
+					<h2 class="pack-heading">What to pack</h2>
 				</div>
 			</div>
 		</div>

@@ -235,6 +235,7 @@ p {
 /* button:focus {
     outline: 0;
 } */
+/* Robot styling*/
 .robot{
     width: 50px;
     height: 50px;
@@ -295,7 +296,15 @@ p {
     }
 
 }   
-.voice-btn{box-shadow:inset 0px 1px 0px 0px #97c4fe;
+.pack-heading{
+    background-color: dodgerblue;
+    color: white;
+    font-family: Arial;
+}
+/* Both voice buttons styling*/
+/* Both voice buttons styling*/
+.voice-btn{
+    box-shadow:inset 0px 1px 0px 0px #97c4fe;
 	background:linear-gradient(to bottom, #3d94f6 5%, #1e62d0 100%);
 	background-color:#3d94f6;
 	border-radius:6px;
