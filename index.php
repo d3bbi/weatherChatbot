@@ -39,10 +39,7 @@
 				<form>
 					<div class="typing-field">
 						<div class="input-data">
-							<div class="input-single">
-								<input id="data" type="text" placeholder="Type something here.." required>
-							</div> 
-							
+								<input id="data" type="text" placeholder="Type something here.." required oninvalid="this.setCustomValidity(' ')">							
 							<button id="send-btn">Send</button>
 						</div>
 					</div>

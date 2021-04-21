@@ -11,11 +11,13 @@ html,body{
 }
 
 .header {
-  padding: 20px;
-  text-align: center;
-  background: blue;
-  color: white;
-  font-size: 30px;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    background-image: url(./images/headerPic.png);
+    background-size: cover;
+    font-size: 30px;
+    background-position-y: bottom;
 }
 
 .footer {
@@ -182,7 +184,7 @@ html,body{
     transform: translateY(-50%);
     transition: all 0.3s ease;
 }
-.wrapper .typing-field .input-data input:valid ~ button{
+.wrapper .typing-field .input-data input:focus ~ button{
     opacity: 1;
     pointer-events: auto;
 }
@@ -205,7 +207,6 @@ html,body{
 	width: 80%;
 	margin: 0 auto;
 	text-align: center;
-
 }
 
 /* To create two columns for form. */
@@ -231,15 +232,14 @@ p {
     color: #444;
 }
 
-button:focus {
+/* button:focus {
     outline: 0;
-}
+} */
 
 .page-description {
     font-size: 1.1rem;
     margin: 0 auto;
 }
-
 
 
 .no-browser-support {
@@ -285,7 +285,6 @@ button:focus {
     .container {
         padding: 50px 25px;
     }
-
     button {
         margin-bottom: 10px;
     }

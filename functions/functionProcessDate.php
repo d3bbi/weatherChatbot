@@ -8,9 +8,29 @@ $processDate = function ($getMsg) {
 	$minusDate = DateTime::createFromFormat('d-m-Y', $getMsg);
 	//check if date is separated by "/"
 	$slashDate = DateTime::createFromFormat('d/m/Y', $getMsg);
+	//check if date is separated by "."
+	$dotDate = DateTime::createFromFormat('d.m.Y', $getMsg);
+	//check if date has the year with 2 digits
+	$twoDigitYear1 = DateTime::createFromFormat('j-m-y', $getMsg);
+	$twoDigitYear2 = DateTime::createFromFormat('j.m.y', $getMsg);
+	$twoDigitYear3 = DateTime::createFromFormat('j/m/y', $getMsg);
+
+
+	//the conditions check if the user date is in one of the format prev created
 	if ($minusDate && $minusDate->format('d-m-Y') == $getMsg) {
 		$valid = true;
 	} else if ($slashDate && $slashDate->format('d/m/Y') == $getMsg) {
+		$valid = true;
+	} else if ($dotDate && $dotDate->format('d.m.Y') == $getMsg) {
+		$valid = true;
+	} else if ($twoDigitYear1 && $twoDigitYear1->format('j-m-y') == $getMsg) {
+		$getMsg = $twoDigitYear1->format('j-m-Y');
+		$valid = true;
+	} else if ($twoDigitYear2 && $twoDigitYear2->format('j.m.y') == $getMsg) {
+		$getMsg = $twoDigitYear2->format('j-m-Y');
+		$valid = true;
+	} else if ($twoDigitYear3 && $twoDigitYear3->format('j/m/y') == $getMsg) {
+		$getMsg = $twoDigitYear3->format('j-m-Y');
 		$valid = true;
 	} else {
 		$valid = false;
@@ -36,4 +56,3 @@ $processDate = function ($getMsg) {
 		return $array;
 	}
 };
-
