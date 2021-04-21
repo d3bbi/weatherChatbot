@@ -29,7 +29,7 @@
 				<div class="form">
 					<div class="bot-inbox inbox">
 						<div class="icon">
-							<i class="fas fa-user"></i>
+							<img src="https://png.pngtree.com/png-vector/20201225/ourlarge/pngtree-small-robot-icon-element-design-png-image_2589340.jpg" class="robot">
 						</div>
 						<div class="msg-header">
 							<p>Hello there, I'm a chatbot that is here to help you plan what to pack for your trip. First, I need to know what date you are leaving?</p>
@@ -108,7 +108,7 @@
 						console.log(jsArray);
 							//readOutLoud(jsArray[1]);
 						//Creating the html require to show the bots reply on the form.
-						$replay = '<div class="bot-inbox inbox"><div class="icon"><i class="fas fa-user"></i></div><div class="msg-header"><p>' + jsArray[1] + '</p></div></div>';
+						$replay = '<div class="bot-inbox inbox"><div class="icon"><img src="https://png.pngtree.com/png-vector/20201225/ourlarge/pngtree-small-robot-icon-element-design-png-image_2589340.jpg" class="robot"></div><div class="msg-header"><p>' + jsArray[1] + '</p></div></div>';
 
 						//if the first element of the array is weather then create html to process into what to pack section.
 						if (jsArray[0] == "weather") {
