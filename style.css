@@ -296,13 +296,16 @@ p {
     }
 
 }   
+/* Styling for "What to Pack" */
+
 .pack-heading{
     background-color: dodgerblue;
     color: white;
     font-family: Arial;
 }
+
 /* Both voice buttons styling*/
-/* Both voice buttons styling*/
+
 .voice-btn{
     box-shadow:inset 0px 1px 0px 0px #97c4fe;
 	background:linear-gradient(to bottom, #3d94f6 5%, #1e62d0 100%);
