@@ -29,7 +29,7 @@
 				<div class="form">
 					<div class="bot-inbox inbox">
 						<div class="icon">
-							<i class="fas fa-user"></i>
+							<img src="https://png.pngtree.com/png-vector/20201225/ourlarge/pngtree-small-robot-icon-element-design-png-image_2589340.jpg" class="robot">
 						</div>
 						<div class="msg-header">
 							<p>Hello there, I'm a chatbot that is here to help you plan what to pack for your trip. First, I need to know what date you are leaving?</p>
@@ -46,8 +46,8 @@
 				</form>
 				<h3 class="no-browser-support">Sorry, Your Browser Doesn't Support the Web Speech API. Try Opening This Demo In Google Chrome.</h3>
 				<div class="app">     
-					<button id="start-record-btn" title="Start Recording">Use Voice</button>
-					<button id="pause-record-btn" title="Pause Recording">Stop Recording</button> 
+					<button id="start-record-btn" class="voice-btn" title="Start Recording">Use Voice</button>
+					<button id="pause-record-btn" class="voice-btn" title="Pause Recording">Stop Recording</button> 
 					<p id="recording-instructions">Press the <strong>Start Recognition</strong> button and allow access.</p>
 					<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 					<script src="script.js"></script>
@@ -57,7 +57,7 @@
 		<div class="column">
 			<div class="wrapper">
 				<div class="results">
-					<h2>What to pack</h2>
+					<h2 class="pack-heading">What to pack</h2>
 				</div>
 			</div>
 		</div>
@@ -108,7 +108,7 @@
 						console.log(jsArray);
 							//readOutLoud(jsArray[1]);
 						//Creating the html require to show the bots reply on the form.
-						$replay = '<div class="bot-inbox inbox"><div class="icon"><i class="fas fa-user"></i></div><div class="msg-header"><p>' + jsArray[1] + '</p></div></div>';
+						$replay = '<div class="bot-inbox inbox"><div class="icon"><img src="https://png.pngtree.com/png-vector/20201225/ourlarge/pngtree-small-robot-icon-element-design-png-image_2589340.jpg" class="robot"></div><div class="msg-header"><p>' + jsArray[1] + '</p></div></div>';
 
 						//if the first element of the array is weather then create html to process into what to pack section.
 						if (jsArray[0] == "weather") {

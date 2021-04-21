@@ -235,7 +235,13 @@ p {
 /* button:focus {
     outline: 0;
 } */
-
+/* Robot styling*/
+.robot{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border-top: 10px;
+}
 .page-description {
     font-size: 1.1rem;
     margin: 0 auto;
@@ -290,8 +296,40 @@ p {
     }
 
 }   
+/* Styling for "What to Pack" */
 
+.pack-heading{
+    background-color: dodgerblue;
+    color: white;
+    font-family: Arial;
+}
 
+/* Both voice buttons styling*/
+
+.voice-btn{
+    box-shadow:inset 0px 1px 0px 0px #97c4fe;
+	background:linear-gradient(to bottom, #3d94f6 5%, #1e62d0 100%);
+	background-color:#3d94f6;
+	border-radius:6px;
+	border:1px solid #337fed;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #1570cd;
+}
+.voice-btn:hover {
+	background:linear-gradient(to bottom, #1e62d0 5%, #3d94f6 100%);
+	background-color:#1e62d0;
+}
+.voice-btn:active {
+	position:relative;
+	top:1px;
+}
 
 /* -- Demo ads -- */
 
