@@ -46,8 +46,8 @@
 				</form>
 				<h3 class="no-browser-support">Sorry, Your Browser Doesn't Support the Web Speech API. Try Opening This Demo In Google Chrome.</h3>
 				<div class="app">     
-					<button id="start-record-btn" title="Start Recording">Use Voice</button>
-					<button id="pause-record-btn" title="Pause Recording">Stop Recording</button> 
+					<button id="start-record-btn" class="voice-btn" title="Start Recording">Use Voice</button>
+					<button id="pause-record-btn" class="voice-btn" title="Pause Recording">Stop Recording</button> 
 					<p id="recording-instructions">Press the <strong>Start Recognition</strong> button and allow access.</p>
 					<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 					<script src="script.js"></script>
