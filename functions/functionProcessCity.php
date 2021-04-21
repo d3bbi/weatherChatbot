@@ -10,34 +10,10 @@ $found = false;
 		}
 			
 		if ($found == true) {
-			        // create curl resource
-        $ch = curl_init();
-
-        // set url
-        curl_setopt($ch, CURLOPT_URL, "http://api.openweathermap.org/data/2.5/weather?q=".$getMesg."&appid=a6b398ac3fdaeeb64f5fa4d343043948");
-
-        //return the transfer as a string
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-
-        //$output contains the output string
-        $output = curl_exec($ch);
-		$js_code = json_decode($output);
-		// $js_code->weather[0]->description . '<br>' . $js_code->main->temp;
+		require "functions/functionProcessWeather.php";
 		
-		//calculate temperature - Celsius = Kelvin-273.15
-		$temp = "<br>".round($js_code->main->temp-273.15,1)." C";
-		$array = array(
-		"weather",
-		"The weather in ".$getMesg." is ".$js_code->weather[0]->description . " with a temperature of: " . $temp
-		,ucwords($getMesg)
-		,$getCities
-		,$js_code->weather[0]->description,
-		$js_code->weather[0]->icon,
-		$js_code->main->temp);
+		return $processWeather($getMesg);
 
-		return $array;
-        // close curl resource to free up system resources
-        curl_close($ch);
 		} else {
 		$array = array("city","Couldn't Find",$getMesg,$getCities);
 		return $array;			

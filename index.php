@@ -118,9 +118,9 @@
 								type: 'POST',
 								//Creating the data to be sent to message.php
 								data: {
-									weather: jsArray[4],
-									icon: jsArray[5],
-									temp: jsArray[6],
+									weather: jsArray[3],
+									icon: jsArray[4],
+									temp: jsArray[5],
 									city: jsArray[2]
 								},
 								success: function(result) {
