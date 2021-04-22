@@ -42,7 +42,7 @@ html,body{
 /* Style for success messages*/
 .successMsg {
   border-radius: 3px;
-  background-color: green;
+  background-color: #3faddbb8;
   padding: 5px;
   width: auto;
   margin: 0 auto;
@@ -232,10 +232,15 @@ p {
     color: #444;
 }
 
-/* button:focus {
-    outline: 0;
-} */
-/* Robot styling*/
+h1 {
+    font-size: 3vw;
+    text-shadow: -2px 1px 10px #1e3440;
+}
+
+.header p{
+    text-shadow: 0px 1px 4px white;
+}
+
 .robot{
     width: 50px;
     height: 50px;
@@ -299,9 +304,10 @@ p {
 /* Styling for "What to Pack" */
 
 .pack-heading{
-    background-color: dodgerblue;
+    background-color: #007bff;
     color: white;
-    font-family: Arial;
+    padding: 5px;
+    font-family: 'Poppins', sans-serif;
 }
 
 /* Both voice buttons styling*/
