@@ -4,7 +4,7 @@
 	$getTemp = round($_POST['temp'],0);
 	$icon = $_POST['icon'];
 	$getCity = $_POST['city'];
-
+	$buttons = "<div class='weatherButton'><button id='continues'>My trip continues</button><button id='ends'>Trip ends here</button></div>";
 
 	if ($getTemp < 280) {
 		echo "<div class='containerWeather'>
@@ -15,7 +15,7 @@
 					<img src='images/sunglasses.jpg' alt='Stickman' width='100' height='100'>
 					<img src='images/umbrella.jpg' alt='Stickman' width='100' height='100'>
 				</div>
-			  </div>";
+			  </div>".$buttons;
 		
 	} else if ( $getTemp < 280) {
 		echo "<div class='containerWeather'>
@@ -26,7 +26,7 @@
 					<img src='images/sunglasses.jpg' alt='Stickman' width='100' height='100'>
 					<img src='images/umbrella.jpg' alt='Stickman' width='100' height='100'>
 				</div>
-			  </div>";
+			  </div>".$buttons;
 		
 	}
 

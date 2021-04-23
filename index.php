@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatbot PHP</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Chatbot PHP</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	<script src="script.js"></script>
 </head>
 
@@ -58,8 +58,8 @@
 		</div>
 		<div class="column weatherColumn">
 			<div class="wrapper">
+			<h3 class="pack-heading">What to pack</h3>
 				<div class="results">
-					<h3 class="pack-heading">What to pack</h3>
 				</div>
 			</div>
 		</div>
@@ -109,7 +109,7 @@
 						console.log(jsArray);
 						readOutLoud(jsArray[1]);
 						//Creating the html require to show the bots reply on the form.
-						$replay = '<div class="bot-inbox inbox"><div class="icon"><img src="./images/botIcon.png" class="robot"></div><div class="msg-header"><p>' + jsArray[1] + '</p></div></div>';
+						$reply = '<div class="bot-inbox inbox"><div class="icon"><img src="./images/botIcon.png" class="robot"></div><div class="msg-header"><p>' + jsArray[1] + '</p></div></div>';
 
 						//if the first element of the array is weather then create html to process into what to pack section.
 						if (jsArray[0] == "weather") {
@@ -125,39 +125,59 @@
 									city: jsArray[2]
 								},
 								success: function(result) {
-									console.log("weather found!");
 									$weather = result;
 									$(".results").append($weather);
-									$button = "<div class='weatherButton'><button id='continues'>My trip continues</button><button id='ends'>Trip ends here</button></div>";
-									$(".weatherColumn").append($button);
+									$(".results").scrollTop($(".results")[0].scrollHeight);
+
+									$("#continues").on("click", function() {
+										$.ajax({
+											url: 'message.php',
+											//Type of call.
+											type: 'POST',
+											//Creating the data to be sent to functionWeatherMatrix.php
+											data: {
+												question: "weather",
+											},
+											success: function(result) {
+												$question = "date";
+												$botMsg = "Same date?";
+												$reply = '<div class="bot-inbox inbox"><div class="icon"><img src="./images/botIcon.png" class="robot"></div><div class="msg-header"><p>' + $botMsg + '</p></div></div>';
+												jsArray = ["date", "", ""];
+												appendMessagetoForm(jsArray);
+												$(".weatherButton").remove();
+											}
+										});
+									});
 
 								}
 
 							});
 						}
-						//$replay = '<div class="bot-inbox inbox"><div class="icon"><i class="fas fa-user"></i></div><div class="msg-header"><p>'+ result +'</p></div></div>';
-						//Add the bots reply the form.
-						$(".form").append($replay);
 
-						// when chat goes down the scroll bar automatically comes to the bottom
-						$(".form").scrollTop($(".form")[0].scrollHeight);
-						//update the question type in the html.
-						$("#question").html(jsArray[0]);
-						//update the cities in the html.
-						$("#cities").val(jsArray[3]);
+						//Add the bots reply the form.
+						appendMessagetoForm(jsArray);
+
 					}
 				});
+
+
 			});
 
-			$("#continues").on("click", function() {
-										$question = "date";
-										$botMsg = "Same date?";
-										$reply = '<div class="bot-inbox inbox"><div class="icon"><img src="./images/botIcon.png" class="robot"></div><div class="msg-header"><p>' + $botMsg + '</p></div></div>';
 
-									});
 
 
 		});
+
+		function appendMessagetoForm(jsArray) {
+			//Add the bots reply the form.
+			$(".form").append($reply);
+			// when chat goes down the scroll bar automatically comes to the bottom
+			$(".form").scrollTop($(".form")[0].scrollHeight);
+			//update the question type in the html.
+			$("#question").html(jsArray[0]);
+			//update the cities in the html.
+			$("#cities").val(jsArray[3]);
+		}
 	</script>
 
 </body>

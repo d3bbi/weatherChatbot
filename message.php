@@ -34,7 +34,7 @@
 		//City is passed back to index.php for processing.
 		echo json_encode($city);
 
-	} else if ($getAnswerExpected == 'weather'){
+	} else if ($getAnswerExpected == 'continueLoop'){
 		if (isset($getMsg)){
 			echo "continue";
 		} else {
