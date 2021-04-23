@@ -125,6 +125,7 @@
 									city: jsArray[2]
 								},
 								success: function(result) {
+									//append the weather forecast of the city on the left container
 									$weather = result;
 									$(".results").append($weather);
 									$(".results").scrollTop($(".results")[0].scrollHeight);
@@ -136,17 +137,18 @@
 											url: 'message.php',
 											//Type of call.
 											type: 'POST',
-											//Creating the data to be sent to message.php
+											//Nothing is passed to message.php
 											data: {
-												// question: "weather",
 											},
 											success: function(result) {
+												//the user cannot type in the typing-field, can only click one of the buttons
 												$(".typing-field").removeClass("removeEvent");
-												// $question = "weather";
 												$botMsg = "Are you visiting the next place on the same date?";
 												$reply = '<div class="bot-inbox inbox"><div class="icon"><img src="./images/botIcon.png" class="robot"></div><div class="msg-header"><p>' + $botMsg + '</p></div></div>';
+												//create array with first element "loop" that will be read by the message.php
 												jsArray = ["loop", "", ""];
 												appendMessagetoForm(jsArray);
+												//remove the buttons
 												$(".weatherButton").remove();
 											}
 										});

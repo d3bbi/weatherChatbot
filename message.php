@@ -34,17 +34,20 @@ if ($getAnswerExpected == 'date') {
 	//City is passed back to index.php for processing.
 	echo json_encode($city);
 
-
+	//if the expected answer is loop then
 } else if ($getAnswerExpected == 'loop') {
-	if ($getMesg == 'yes') {
+	//check if the user enter yes (will visit next place same day)
+	if (strcasecmp($getMesg, "yes") === 0) {
 		//Country stores the return of the function.
 		$array = array("country", "Great, now which country are you planning to visit?", $getMesg);
-
-	} else if ($getMesg == 'no') {
+	//or if the user enter no (will visit next place different day)
+	} else if (strcasecmp($getMesg, "no") === 0) {
 		//Date varible stores the return of the function processDate.
 		$array = array("date", "Ok. What date are you leaving then?", $getMesg);
+	//check if the user enter wrong input
 	} else {
 		$array = array("loop","Try Again. Are you visiting the next place on the same date?",$getMesg,"");
 	}
+	//the result is passed back to index.php for processing.
 	echo json_encode($array);
 }
