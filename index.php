@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Chatbot PHP</title>
-	<link rel="stylesheet" href="style.css">
-	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
-	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot PHP</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	<script src="script.js"></script>
 </head>
 
@@ -107,7 +107,7 @@
 						var jsArray = JSON.parse(result);
 						//logging the array to console.
 						console.log(jsArray);
-						//readOutLoud(jsArray[1]);
+						readOutLoud(jsArray[1]);
 						//Creating the html require to show the bots reply on the form.
 						$replay = '<div class="bot-inbox inbox"><div class="icon"><img src="./images/botIcon.png" class="robot"></div><div class="msg-header"><p>' + jsArray[1] + '</p></div></div>';
 
