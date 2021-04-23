@@ -5,8 +5,7 @@
 	$getCities = $_POST['cities'];
 	$getMesg = $_POST['text'];
 	
-	
-	
+
 	//Processing logic.
 	//If the expected answer is a date then
 	if($getAnswerExpected == 'date') {
@@ -33,7 +32,14 @@
 		//City stores the return of the function.
 		$city = $processCity($getMesg,$getCities);
 		//City is passed back to index.php for processing.
-		echo json_encode($city);		
+		echo json_encode($city);
+
+	} else if ($getAnswerExpected == 'weather'){
+		if (isset($getMsg)){
+			echo "continue";
+		} else {
+			echo "end";
+		}	
 	}
 	
 	

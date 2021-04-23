@@ -1,6 +1,7 @@
 <?php 
 
 $processCity = function($getMesg,$getCities) {
+	
 $found = false;
 		$cities = explode(",",$getCities);
 		foreach($cities as $value) {

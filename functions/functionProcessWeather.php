@@ -25,7 +25,7 @@ $processWeather = function($getMesg) {
 
     $array = array(
     "weather",
-    "The weather in $getMesg is $description with a temperature of: <br>".round($temp,1)." C",
+    "The weather in $getMesg is $description with a temperature of ".round($temp,0)." °C",
     $capitalizedCity,
     $description,
     $icon,

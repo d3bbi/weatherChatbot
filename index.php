@@ -31,7 +31,7 @@
 				<div class="form">
 					<div class="bot-inbox inbox">
 						<div class="icon">
-							<img src="https://png.pngtree.com/png-vector/20201225/ourlarge/pngtree-small-robot-icon-element-design-png-image_2589340.jpg" class="robot">
+							<img src="./images/botIcon.png" class="robot">
 						</div>
 						<div class="msg-header">
 							<p>Hello there, I'm a chatbot that is here to help you plan what to pack for your trip. First, I need to know what date you are leaving?</p>
@@ -56,7 +56,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="column">
+		<div class="column weatherColumn">
 			<div class="wrapper">
 				<div class="results">
 					<h3 class="pack-heading">What to pack</h3>
@@ -109,7 +109,7 @@
 						console.log(jsArray);
 						//readOutLoud(jsArray[1]);
 						//Creating the html require to show the bots reply on the form.
-						$replay = '<div class="bot-inbox inbox"><div class="icon"><img src="https://png.pngtree.com/png-vector/20201225/ourlarge/pngtree-small-robot-icon-element-design-png-image_2589340.jpg" class="robot"></div><div class="msg-header"><p>' + jsArray[1] + '</p></div></div>';
+						$replay = '<div class="bot-inbox inbox"><div class="icon"><img src="./images/botIcon.png" class="robot"></div><div class="msg-header"><p>' + jsArray[1] + '</p></div></div>';
 
 						//if the first element of the array is weather then create html to process into what to pack section.
 						if (jsArray[0] == "weather") {
@@ -117,7 +117,7 @@
 								url: 'functions/functionWeatherMatrix.php',
 								//Type of call.
 								type: 'POST',
-								//Creating the data to be sent to message.php
+								//Creating the data to be sent to functionWeatherMatrix.php
 								data: {
 									weather: jsArray[3],
 									icon: jsArray[4],
@@ -125,14 +125,15 @@
 									city: jsArray[2]
 								},
 								success: function(result) {
-									console.log("success");
+									console.log("weather found!");
 									$weather = result;
 									$(".results").append($weather);
+									$button = "<div class='weatherButton'><button id='continues'>My trip continues</button><button id='ends'>Trip ends here</button></div>";
+									$(".weatherColumn").append($button);
+
 								}
 
 							});
-
-
 						}
 						//$replay = '<div class="bot-inbox inbox"><div class="icon"><i class="fas fa-user"></i></div><div class="msg-header"><p>'+ result +'</p></div></div>';
 						//Add the bots reply the form.
@@ -147,6 +148,15 @@
 					}
 				});
 			});
+
+			$("#continues").on("click", function() {
+										$question = "date";
+										$botMsg = "Same date?";
+										$reply = '<div class="bot-inbox inbox"><div class="icon"><img src="./images/botIcon.png" class="robot"></div><div class="msg-header"><p>' + $botMsg + '</p></div></div>';
+
+									});
+
+
 		});
 	</script>
 
