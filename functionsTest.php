@@ -43,17 +43,17 @@ class functionsTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, $processDate('banana'));
     }
 
-        //Test if only a character is entered
-        public function testProcessDateCharacter(): void
-        {
-            require 'functions/functionProcessDate.php';
-            $expected = [
-                'date',
-                "I'm sorry I didn't get that date. Can you try again?",
-                'a',
-            ];
-            $this->assertEquals($expected, $processDate('a'));
-        }
+    //Test if only a character is entered
+    public function testProcessDateCharacter(): void
+    {
+        require 'functions/functionProcessDate.php';
+        $expected = [
+            'date',
+            "I'm sorry I didn't get that date. Can you try again?",
+            'a',
+        ];
+        $this->assertEquals($expected, $processDate('a'));
+    }
 
     //Testing in case the date is in the past
     public function testProcessPastDate(): void
@@ -123,7 +123,7 @@ class functionsTest extends PHPUnit\Framework\TestCase
         $this->assertEquals($expected, $processCountry('Dublin'));
     }
 
-        
+
     /**
      * processCities() test case.
      */
@@ -132,9 +132,10 @@ class functionsTest extends PHPUnit\Framework\TestCase
     public function testProcessCityNegativeReturn(): void
     {
         require 'functions/functionProcessCity.php';
-        $expected = ['city', "Couldn't Find", 'Ireland', 'Dublin'];
-        $this->assertEquals($expected, $processCity('Ireland', 'Dublin'));
+        $expected = ['city', "Couldn't Find", 'Ireland', 'x'];
+        $this->assertEquals($expected, $processCity('Ireland', 'x'));
     }
+
     // Tests with number instead of city
     public function testProcessCityWithNumber(): void
     {

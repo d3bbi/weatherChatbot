@@ -128,21 +128,24 @@
 									$weather = result;
 									$(".results").append($weather);
 									$(".results").scrollTop($(".results")[0].scrollHeight);
+									$(".typing-field").addClass("removeEvent");
 
+									//if the user clicks on the "continue trip" button
 									$("#continues").on("click", function() {
 										$.ajax({
 											url: 'message.php',
 											//Type of call.
 											type: 'POST',
-											//Creating the data to be sent to functionWeatherMatrix.php
+											//Creating the data to be sent to message.php
 											data: {
-												question: "weather",
+												// question: "weather",
 											},
 											success: function(result) {
-												$question = "date";
-												$botMsg = "Same date?";
+												$(".typing-field").removeClass("removeEvent");
+												// $question = "weather";
+												$botMsg = "Are you visiting the next place on the same date?";
 												$reply = '<div class="bot-inbox inbox"><div class="icon"><img src="./images/botIcon.png" class="robot"></div><div class="msg-header"><p>' + $botMsg + '</p></div></div>';
-												jsArray = ["date", "", ""];
+												jsArray = ["loop", "", ""];
 												appendMessagetoForm(jsArray);
 												$(".weatherButton").remove();
 											}
