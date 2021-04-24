@@ -142,7 +142,7 @@
 											success: function(result) {
 												//the user cannot type in the typing-field, can only click one of the buttons
 												$(".typing-field").removeClass("removeEvent");
-												$botMsg = "Will you visit the next location on the same date?";
+												$botMsg = "Are you visiting the next location on the same date?";
 												$reply = '<div class="bot-inbox inbox"><div class="icon"><img src="./images/botIcon.png" class="robot"></div><div class="msg-header"><p>' + $botMsg + '</p></div></div>';
 												//create array with first element "loop" that will be sent to the message.php
 												jsArray = ["loop", "", ""];
