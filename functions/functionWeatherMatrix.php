@@ -6,7 +6,7 @@
 	$getCity = $_POST['city'];
 	$buttons = "<div class='weatherButton'><button id='continues'>My trip continues</button><button id='ends'>Trip ends here</button></div>";
 
-	if ($getTemp < 280) {
+	if ($getTemp <= 12) {
 		echo "<div class='containerWeather'>
 				<div class = 'successMsg'><img src='http://openweathermap.org/img/wn/$icon.png'><h3>$getCity</h3><p>$getWeather</p><h5>{$getTemp}°</h5></div>
 				<div class = 'imgContainer'>
@@ -17,7 +17,7 @@
 				</div>
 			  </div>".$buttons;
 		
-	} else if ( $getTemp < 280) {
+	} else if ( $getTemp > 12) {
 		echo "<div class='containerWeather'>
 		<div class = 'successMsg'><img src='http://openweathermap.org/img/wn/$icon.png'><h3>$getCity</h3><p>$getWeather</p><h5>{$getTemp}°</h5></div>
 		<div class = 'imgContainer'>
