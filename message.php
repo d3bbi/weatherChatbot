@@ -46,8 +46,10 @@ if ($getAnswerExpected == 'date') {
 		$array = array("date", "Ok. What date are you leaving then?", $getMesg);
 	//check if the user enter wrong input
 	} else {
-		$array = array("loop","Try Again. Are you visiting the next place on the same date?",$getMesg,"");
+		$array = array("loop","I didn't get that. Are you visiting the next place on the same date?",$getMesg,"");
 	}
 	//the result is passed back to index.php for processing.
 	echo json_encode($array);
+} else if ($getAnswerExpected == 'restart'){
+	$array = array("date","If you want to check another place, just enter a date.",$getMesg,"");
 }

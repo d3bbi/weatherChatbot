@@ -58,7 +58,7 @@
 		</div>
 		<div class="column weatherColumn">
 			<div class="wrapper">
-			<h3 class="pack-heading">What to pack</h3>
+				<h3 class="pack-heading">What to pack</h3>
 				<div class="results">
 				</div>
 			</div>
@@ -138,15 +138,36 @@
 											//Type of call.
 											type: 'POST',
 											//Nothing is passed to message.php
-											data: {
-											},
+											data: {},
 											success: function(result) {
 												//the user cannot type in the typing-field, can only click one of the buttons
 												$(".typing-field").removeClass("removeEvent");
-												$botMsg = "Are you visiting the next place on the same date?";
+												$botMsg = "Will you visit the next location on the same date?";
 												$reply = '<div class="bot-inbox inbox"><div class="icon"><img src="./images/botIcon.png" class="robot"></div><div class="msg-header"><p>' + $botMsg + '</p></div></div>';
-												//create array with first element "loop" that will be read by the message.php
+												//create array with first element "loop" that will be sent to the message.php
 												jsArray = ["loop", "", ""];
+												appendMessagetoForm(jsArray);
+												//remove the buttons
+												$(".weatherButton").remove();
+											}
+										});
+									});
+
+									//if the user clicks on the "continue trip" button
+									$("#ends").on("click", function() {
+										$.ajax({
+											url: 'message.php',
+											//Type of call.
+											type: 'POST',
+											//Nothing is passed to message.php
+											data: {},
+											success: function(result) {
+												//the user cannot type in the typing-field, can only click one of the buttons
+												$(".typing-field").removeClass("removeEvent");
+												$botMsg = "Enjoy your trip!";
+												$reply = '<div class="bot-inbox inbox"><div class="icon"><img src="./images/botIcon.png" class="robot"></div><div class="msg-header"><p>' + $botMsg + '</p></div></div>';
+												//create array with first element "loop" that will be sent to the message.php
+												jsArray = ["restart", "", ""];
 												appendMessagetoForm(jsArray);
 												//remove the buttons
 												$(".weatherButton").remove();
