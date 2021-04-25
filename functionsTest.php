@@ -86,9 +86,9 @@ class functionsTest extends PHPUnit\Framework\TestCase
         $expected = [
             'date',
             "I'm sorry I didn't get that date. Can you try again?",
-            '12.05.2021',
+            '12+05+2021',
         ];
-        $this->assertEquals($expected, $processDate('12.05.2021'));
+        $this->assertEquals($expected, $processDate('12+05+2021'));
     }
 
     /**
@@ -150,6 +150,40 @@ class functionsTest extends PHPUnit\Framework\TestCase
         $expected = array("city", "Couldn't Find", "Ireland", "///***");
         $this->assertEquals($expected, $processCity("Ireland", "///***"));
     }
+
+
+    /**
+     * functionWeatherMatrix() test case.
+     */
+
+     //test in case weather forecast is clear with temperature 12C
+    public function testClearWeather12C(): void
+    {
+        $_POST['condition'] = 800;
+        $_POST['temp'] = 12;
+        $_POST['weather'] = "Clear";
+        $_POST['icon'] = "12png";
+        $_POST['city'] = "Dublin";
+        require "functions/functionWeatherMatrix.php";
+        $expected = $heading.$summerClothing.$buttons;
+ 
+        $this->expectOutputString($expected);
+    }
+
+         //test in case weather forecast is rainy with temperature 15C
+         public function testRainyWeather15C(): void
+         {
+             $_POST['condition'] = 502;
+             $_POST['temp'] = 15;
+             $_POST['weather'] = "Light rain";
+             $_POST['icon'] = "12png";
+             $_POST['city'] = "Dublin";
+             require "functions/functionWeatherMatrix.php";
+             $expected = $heading.$summerClothing.$buttons;
+      
+             $this->expectOutputString($expected);
+         }
+
 
     public function testFailure2(): void
     {
