@@ -23,13 +23,16 @@ $processWeather = function($getMesg) {
     //return weather icon
     $icon = $js_code->weather[0]->icon;
 
+    $weatherConditionId = $js_code->weather[0]->id;
+
     $array = array(
     "weather",
     "The weather in $getMesg is $description with a temperature of ".round($temp,0)." °C",
     $capitalizedCity,
     $description,
     $icon,
-    $temp);
+    $temp,
+    $weatherConditionId);
 
     return $array;
     // close curl resource to free up system resources

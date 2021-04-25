@@ -122,7 +122,8 @@
 									weather: jsArray[3],
 									icon: jsArray[4],
 									temp: jsArray[5],
-									city: jsArray[2]
+									city: jsArray[2],
+									condition: jsArray[6],
 								},
 								success: function(result) {
 									//append the weather forecast of the city on the left container
