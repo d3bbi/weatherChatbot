@@ -51,3 +51,4 @@ if ($getCondition >= 500 and $getCondition < 531) {
 } else {
 	echo $heading . $summerClothing . $buttons;
 }
+

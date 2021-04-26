@@ -183,7 +183,19 @@ class functionsTest extends PHPUnit\Framework\TestCase
       
              $this->expectOutputString($expected);
          }
-
+         // test in case weather forecast is cloudy with tempature 11c
+         public function testCloudyWeather11C(): void
+         {
+             $_POST['condition'] = 801;
+             $_POST['temp'] = 11;
+             $_POST['weather'] = "Cloudy";
+             $_POST['icon'] = "12png";
+             $_POST['city'] = "Dublin";
+             require "functions/functionWeatherMatrix.php";
+             $expected = $heading.$summerClothing.$buttons;
+      
+             $this->expectOutputString($expected);
+         }
 
     public function testFailure2(): void
     {
