@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://gitlab.griffith.ie/Davidor/chatbot-weather-api/-/raw/master/images/headerBot.png">
+<img src="https://github.com/d3bbi/weatherChatbot/blob/main/headerBot.png">
 <br/>
 <h1>Weather Chatbot Version 1.0</h1>
 <h3>A chatbot that will help you choose the best clothes for your trip!</h3>
@@ -20,12 +20,12 @@
 The Weather Chatbot is a chatbot that will help the user to plan the clothing requirement for his/her trip by reviewing the weather for each location and suggest appropriate clothing.
 The Web interface is divided into two main columns. On the left-hand side we have the chatbot where the user can interact and enter the details of the trip.
 <div align="center">
-<img src="https://gitlab.griffith.ie/Davidor/chatbot-weather-api/-/raw/master/images/interface1.png">
+<img src="https://github.com/d3bbi/weatherChatbot/blob/main/interface1.png">
 </div>
 
 On the right-hand side will be displayed the suggestion of clothes that the user could pack for the trip.
 <div align="center">
-<img src="https://gitlab.griffith.ie/Davidor/chatbot-weather-api/-/raw/master/images/interface2.png">
+<img src="https://github.com/d3bbi/weatherChatbot/blob/main/interface2.png">
 </div>
 
 
@@ -83,9 +83,9 @@ Structure of the project:
 ## Contribution
 The project was developed by:<br/>
 
-**{+ Cian Scarborough +}** - Student number 3000011<br/>
-**{+ David O'Reilly +}** - Student number 3018591<br/>
-**{+ Deborah Rimei +}** - Student number 3015579<br/>
+**Cian Scarborough** - Student number 3000011<br/>
+**David O'Reilly** - Student number 3018591<br/>
+**Deborah Rimei** - Student number 3015579<br/>
 
 
 
