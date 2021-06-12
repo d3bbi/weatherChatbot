@@ -107,7 +107,7 @@
 						var jsArray = JSON.parse(result);
 						//logging the array to console.
 						console.log(jsArray);
-						readOutLoud(jsArray[1]);
+						// readOutLoud(jsArray[1]);
 						//Creating the html require to show the bots reply on the form.
 						$reply = '<div class="bot-inbox inbox"><div class="icon"><img src="./images/botIcon.png" class="robot"></div><div class="msg-header"><p>' + jsArray[1] + '</p></div></div>';
 
